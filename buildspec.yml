@@ -1,0 +1,21 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - npm install
+  build:
+    commands:
+      - npm run generate
+#  post_build:
+#    commands:
+#      - aws cloudfront create-invalidation --distribution-id EXXXXXXX --paths "/*"
+batch:
+  fast-fail: false
+artifacts:
+  files:
+    - '**/*'
+  base-directory: dist
+cache:
+  paths:
+    - /tmp/node_modules.tar
