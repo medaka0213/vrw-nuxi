@@ -1,6 +1,6 @@
 <template lang="pug">
-h1.pl-3.pt-3 ミッション検索
-MissionSearchForm(type="mission", :initialQuery="query")
+h1.pl-3.pt-3 打ち上げ検索
+MissionSearchForm(type="launch", :initialQuery="query")
 MissionListBlock(
   :items="store.state.item.launch",
   v-if="store.state.item.isReceived"
@@ -34,7 +34,7 @@ export default defineComponent({
     async function getItems() {
       await store.commit("item/set_received", false);
       await store.dispatch("item/get_items", {
-        type: "mission", params: query
+        type: "launch", params: query
       });
       await store.commit("item/set_received", true);
     }
