@@ -1,12 +1,17 @@
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
+    css: ["bootstrap/dist/css/bootstrap.min.css"],
     app: {
         head: {
             title: 'Home',
             titleTemplate: '%s - ロケット打ち上げを観る集会',
             htmlAttrs: {
                 lang: 'ja',
-                prefix: 'og: http://ogp.me/ns#'
+                prefix: 'og: http://ogp.me/ns#',
+                class: 'html-class',
+            },
+            bodyAttrs: {
+                class: 'body-class',
             },
             meta: [
                 { charset: 'utf-8' },
