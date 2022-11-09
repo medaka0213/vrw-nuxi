@@ -19,5 +19,8 @@
     "pug-loader": "^1.0.2",
     "pug-plain-loader": "^1.1.0",
     "vuex": "^4.1.0"
+  },
+  "dependencies": {
+    "web-streams-polyfill": "^3.2.1"
   }
 }
