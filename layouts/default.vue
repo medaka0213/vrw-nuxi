@@ -37,7 +37,6 @@ export default {
   margin: 0;
   background-color: #eee;
 }
-
 .page-content {
   text-align: left;
   max-width: 1500px;

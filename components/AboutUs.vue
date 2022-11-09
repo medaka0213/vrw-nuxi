@@ -10,10 +10,7 @@
     span.me-3  
         a(href="/meetup") 集会一覧
     span.me-3  
-        a(href="/launch") 打ち上げ一覧
-    span.me-3  
-        a(href="/event") その他イベント一覧
-    
+        a(href="/misson") ミッション一覧
 
 .bg-white.my-3.p-3
     h3 外部リンク
