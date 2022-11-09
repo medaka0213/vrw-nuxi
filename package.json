@@ -12,7 +12,6 @@
     "bootstrap": "^5.2.2",
     "moment": "^2.29.4",
     "moment-timezone": "^0.5.38",
-    "nuxt": "3.0.0-rc.13",
     "primeflex": "^3.2.1",
     "primevue": "^3.18.1",
     "pug": "^3.0.2",
@@ -21,6 +20,6 @@
     "vuex": "^4.1.0"
   },
   "dependencies": {
-    "web-streams-polyfill": "^3.2.1"
+    "nuxt": "3.0.0-rc.13"
   }
 }
