@@ -47,5 +47,14 @@ export default defineComponent({
       getItems,
     };
   },
+  head() {
+    const title = 'ミッション検索'
+    return {
+      title,
+      meta: [
+        { hid: 'og:title', property: 'og:title', content: title }
+      ]
+    };
+  },
 });
 </script>

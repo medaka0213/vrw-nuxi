@@ -109,6 +109,15 @@ export default defineComponent({
             getItems
         }
     },
+    head() {
+        const title = 'ミッション詳細'
+        return {
+            title,
+            meta: [
+                { hid: 'og:title', property: 'og:title', content: title }
+            ]
+        };
+    },
 })
 </script>
 

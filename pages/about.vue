@@ -10,8 +10,12 @@ export default {
     AboutUsBlock
   },
   head() {
+    const title = 'About'
     return {
-      title: 'About',
+      title,
+      meta: [
+        { hid: 'og:title', property: 'og:title', content: title }
+      ]
     };
   },
 };

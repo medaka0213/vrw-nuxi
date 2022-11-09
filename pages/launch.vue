@@ -47,5 +47,14 @@ export default defineComponent({
       getItems,
     };
   },
+  head() {
+    const title = '打ち上げ検索'
+    return {
+      title,
+      meta: [
+        { hid: 'og:title', property: 'og:title', content: title }
+      ]
+    };
+  },
 });
 </script>

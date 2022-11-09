@@ -48,5 +48,14 @@ export default defineComponent({
       getItems,
     };
   },
+  head() {
+    const title = '集会検索'
+    return {
+      title,
+      meta: [
+        { hid: 'og:title', property: 'og:title', content: title }
+      ]
+    };
+  },
 });
 </script>
