@@ -20,6 +20,7 @@
     "vuex": "^4.1.0"
   },
   "dependencies": {
-    "nuxt": "3.0.0-rc.13"
+    "nuxt": "3.0.0-rc.13",
+    "primeicons": "^6.0.1"
   }
 }
