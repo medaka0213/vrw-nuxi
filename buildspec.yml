@@ -6,7 +6,7 @@ phases:
       - yarn install
   build:
     commands:
-      - yarn run build
+      - yarn generate
 #  post_build:
 #    commands:
 #      - aws cloudfront create-invalidation --distribution-id EXXXXXXX --paths "/*"
