@@ -1,6 +1,12 @@
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-    css: ["bootstrap/dist/css/bootstrap.min.css"],
+    css: [
+        'primevue/resources/themes/saga-blue/theme.css',
+        'primevue/resources/primevue.css',
+        'primeicons/primeicons.css',
+        'primeflex/primeflex.css',
+        'bootstrap/dist/css/bootstrap.min.css',
+    ],
     app: {
         head: {
             title: 'Home',
@@ -22,5 +28,8 @@ export default defineNuxtConfig({
                 { hid: 'og:image', property: 'og:image', content: 'https://img.virtualrocketwatching.net/image/image_3636fb8c-5931-4993-82c9-1745ce031d0e.jpeg' },
             ],
         },
-    }
+    },
+    build: {
+		transpile: ['primevue']
+	}
 })
