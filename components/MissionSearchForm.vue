@@ -49,7 +49,7 @@ export default defineComponent({
       let query = keys.filter(key => state[key] || "" !== "").map(key => {
         return `${key}=${state[key]}`
       }).join("&")
-      const url = `/${props.type}?${query}`
+      const url = `/${props.type}/?${query}`
       window.location.href = url
     };
 

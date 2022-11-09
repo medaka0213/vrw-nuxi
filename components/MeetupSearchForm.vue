@@ -47,7 +47,7 @@ export default defineComponent({
       let query = keys.filter(key => state[key] || "" !== "").map(key => {
         return `${key}=${state[key]}`
       }).join("&") 
-      const url = `/meetup?${query}`
+      const url = `/meetup/?${query}`
       console.log("search_items", url);
       window.location.href = url
     };
