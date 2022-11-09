@@ -5,8 +5,8 @@
 .my-2(v-if="state.enable")
   Dropdown.mr-2(v-model="state.mode" :options="modeDict" optionLabel="value" optionValue="key")
 
-  AutoComplete.mr-2(v-model="state.value0" v-if="!isDateTime && state.mode!=='EX' && state.mode!=='N_EX'")
-  AutoComplete.mr-2(v-model="state.value1" v-if="!isDateTime && state.mode==='BETWEEN'")
+  InputText.mr-2(v-model="state.value0" v-if="!isDateTime && state.mode!=='EX' && state.mode!=='N_EX'")
+  InputText.mr-2(v-model="state.value1" v-if="!isDateTime && state.mode==='BETWEEN'")
 
   Calendar.mr-2(
     v-model="state.value0" dateFormat="yy-mm-dd" hourFormat="hh:mm:ss" :showTime="true" :showSeconds="true"
@@ -45,11 +45,11 @@ export default defineComponent({
     watch(() => state,
       (state, prevState) => {
         if (props.isDateTime) {
-          state.value0 = moment(state.value0).format('YYYY-MM-DDTHH:mm:ss')
-          state.value1 = moment(state.value1).format('YYYY-MM-DDTHH:mm:ss')
+          state._value0 = moment(state.value0).format('YYYY-MM-DDTHH:mm:ss')
+          state._value1 = moment(state.value1).format('YYYY-MM-DDTHH:mm:ss')
         }
         if (state.enable){
-          queryValueComputed.value = searchValue2Params(state.mode, state.value0, state.value1, props.stringKey)
+          queryValueComputed.value = searchValue2Params(state.mode, state._value0 || state.value0, state._value1 || state.value1, props.stringKey)
         } else {
           queryValueComputed.value = null
         }

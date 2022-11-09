@@ -38,7 +38,13 @@ export default defineComponent({
       ...state
     }
     const search_items = () => {
-      let query = Object.keys(state).filter(key => state[key] || "" !== "").map(key => {
+      let keys = Object.keys(state)
+      
+      //limitを末尾にする
+      keys = keys.filter((key) => key !== "limit")
+      keys.push("limit")
+
+      let query = keys.filter(key => state[key] || "" !== "").map(key => {
         return `${key}=${state[key]}`
       }).join("&") 
       const url = `/meetup?${query}`
