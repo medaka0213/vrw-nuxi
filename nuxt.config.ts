@@ -26,6 +26,8 @@ export default defineNuxtConfig({
                 { hid: 'og:type', property: 'og:type', content: 'website' },
                 { hid: 'og:title', property: 'og:title', content: 'Virtual Rocket Watching' },
                 { hid: 'og:image', property: 'og:image', content: 'https://img.virtualrocketwatching.net/image/image_3636fb8c-5931-4993-82c9-1745ce031d0e.jpeg' },
+                { hid: 'twitter:card', content: 'summary' },
+                { hid: 'twitter:creator', content: '@vr_launch' },
             ],
             link: [
                 { rel: "icon", type: "image/x-icon", href: "/favicon.ico" }
