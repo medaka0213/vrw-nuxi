@@ -3,10 +3,10 @@ version: 0.2
 phases:
   pre_build:
     commands:
-      - npm install
+      - yarn install
   build:
     commands:
-      - npm run generate
+      - yarn run build
 #  post_build:
 #    commands:
 #      - aws cloudfront create-invalidation --distribution-id EXXXXXXX --paths "/*"
