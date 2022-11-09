@@ -1,5 +1,5 @@
 git checkout production
-git merge main
+git merge master
 git push
 echo changes deployed to prod branch!
-git checkout main
+git checkout master
