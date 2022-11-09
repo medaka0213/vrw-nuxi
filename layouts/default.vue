@@ -13,9 +13,9 @@ header
     //   router-link(to="/slides") スライド資料
 .page-content.mx-auto
   .row.p-0
-    .text-left.col-xl-9.col-md-8.col-sm-12
+    .text-left.col-xl-9.col-sm-12
       slot
-    .col-xl-3.col-md-4
+    .col-xl-3
       .bg-white.p-4.my-3.sidebar_fixed
           GoogleCalendar
 </template>
