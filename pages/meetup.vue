@@ -1,12 +1,11 @@
 <template lang="pug">
-DafaultLayout
-  h1.pl-3 集会検索
-  MeetupSearchForm(type="meetup", :initialQuery="query")
-  MeetupListBlock(
-    :items="store.state.item.meetup || []",
-    v-if="store.state.item.isReceived"
-  )
-  span(v-else) loading...
+h1.pl-3.pt-3 集会検索
+MeetupSearchForm(type="meetup", :initialQuery="query")
+MeetupListBlock(
+  :items="store.state.item.meetup || []",
+  v-if="store.state.item.isReceived"
+)
+span(v-else) loading...
 </template>
 
 <script>
