@@ -48,7 +48,7 @@ export default defineComponent({
     };
   },
   head() {
-    const title = 'ミッション検索'
+    const title = 'ミッションを検索する'
     return {
       title,
       meta: [

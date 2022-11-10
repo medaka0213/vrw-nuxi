@@ -48,7 +48,7 @@ export default defineComponent({
     };
   },
   head() {
-    const title = '集会検索'
+    const title = '集会を検索する'
     return {
       title,
       meta: [
