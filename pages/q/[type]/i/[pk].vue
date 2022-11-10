@@ -29,24 +29,25 @@
                     a(:href= "store.state.item['meetup'][0].itemDetailPath()" )
                         | 集会情報
 
-    .mb-3.border-top-2.border-400.py-5(class="text-left col-12 xl:col-12" v-if="item.youtubeId() !== ''")
-        h4 動画
-        YouTubeBlock(:videoId="item.youtubeId()" width="100%" :start="item.watch_URL_liftoff_at")
+    .mb-3.border-top-2.border-400.py-5(class="text-left col-12" v-if="store.state.item['slide']" || [] !==[])
+        h4 スライド資料
+        SlideItemBlock(:item = "store.state.item['slide'][0]" style="max-width: 800px")
 
     .mb-3.border-top-2.border-400.py-5(class="text-left col-12 xl:col-12" v-if="item.youtubeShortId() !== ''")
         h4 動画 (切り抜き)
         YouTubeBlock(:videoId="item.youtubeShortId()" width="100%")
 
-    .mb-3.border-top-2.border-400.py-5(class="text-left col-12" v-if="store.state.item['slide']" || [] !==[])
-        h4 スライド資料
-        SlideItemBlock(:item = "store.state.item['slide'][0]" style="max-width: 800px")
+    .mb-3.border-top-2.border-400.py-5(class="text-left col-12 xl:col-12" v-if="item.youtubeId() !== ''")
+        h4 動画
+        YouTubeBlock(:videoId="item.youtubeId()" width="100%" :start="item.watch_URL_liftoff_at")
 
-    .mb-3.border-top-2.border-400.py-5(class="text-left col-12 lg:col-6" v-if="store.state.item['countdown']" || [] !==[])
+    .col-12.col-lg-6.mb-3.border-top-2.border-400.py-5(class="text-left" v-if="store.state.item['countdown']" || [] !==[])
         h4 カウントダウン タイムライン
         CountdownBlock(:item = "store.state.item['countdown'][0]" mode="t-minus")
-    .mb-3.border-top-2.border-400.py-5(class="text-left col-12 lg:col-6" v-if="store.state.item['countdown']" || [] !==[])
+    .col-12.col-lg-6.mb-3.border-top-2.border-400.py-5(class="text-left" v-if="store.state.item['countdown']" || [] !==[])
         h4 飛行中タイムライン
         CountdownBlock(:item = "store.state.item['countdown'][0]" mode="t-plus")
+
 span(v-else) 
     | loading...
 </template>
