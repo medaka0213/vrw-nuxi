@@ -11,7 +11,6 @@ phases:
     commands:
       - aws cloudfront create-invalidation --distribution-id E19NR6ENBBQKIZ --paths "/*"
       - aws cloudfront create-invalidation --distribution-id ERLJRXLWGRV5E --paths "/*"
-  fast-fail: false
 artifacts:
   files:
     - '**/*'
