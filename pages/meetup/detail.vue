@@ -82,7 +82,7 @@ export default defineComponent({
             console.log(props)
             const _props = {
                 type: "meetup",
-                pk: route.params.pk
+                pk: route.query.pk
             }
             await store.commit('item/set_received', false)
             await store.dispatch('item/get_single_item', _props)

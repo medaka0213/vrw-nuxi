@@ -22,11 +22,15 @@ export class BaseModel implements BaseModelIF {
   }
 
   itemDetailPath(): string {
-    return `/q/${this.itemType()}/i/${this.pk}`
+    let type = this.itemType()
+    if (["launch", "event"].includes(type)) {
+      type = "mission"
+    }
+    return `/${type}/detail/?pk=${this.pk}`
   }
   
   itemListPath(): string {
-    return `/q/${this.itemType()}`
+    return `/${this.itemType()}/`
   }
 
   notFound(): boolean {
