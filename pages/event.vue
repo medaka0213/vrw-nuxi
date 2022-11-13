@@ -27,7 +27,7 @@ export default defineComponent({
     let query = route.query
     if (!Object.keys(query).length) {
       query = {
-        limit: "100",
+        limit: "1000",
         datetime: time_between("upcoming", 12).join("..."),
       }
     }
