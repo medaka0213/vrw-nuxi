@@ -90,7 +90,10 @@ export default defineComponent({
         {
           key: SearchMode.MONTH,
           value: "を含む月",
-          unit: "月"
+        },
+        {
+          key: SearchMode.QUARTER,
+          value: "を含む四半期",
         },
         {
           key: SearchMode.YEAR,

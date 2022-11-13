@@ -116,7 +116,7 @@ export class TimeRange implements timeRangeIF {
                 console.log("WEEK_TEIKI")
                 start = moment(dt).startOf("week").add(1, "day")
                 start.set("hour", 12)
-                end = moment(dt).endOf("week").add(1, "day")
+                end = moment(dt).add(1, "week").startOf("week").add(1, "day")
                 end.set("hour", 15)
                 if (start.isAfter(dt)){
                     start = start.subtract(1, "week")
@@ -126,22 +126,22 @@ export class TimeRange implements timeRangeIF {
             case SearchMode.WEEK:
                 console.log("WEEK")
                 start = moment(dt).startOf("week")
-                end = moment(dt).endOf("week")
+                end = moment(dt).add(1, "week").startOf("week")
                 break
             case SearchMode.MONTH:
                 console.log("MONTH")
                 start = moment(dt).startOf("month")
-                end = moment(dt).endOf("month")
+                end = moment(dt).add(1, "month").startOf("month")
                 break
             case SearchMode.YEAR:
                 console.log("YEAR")
                 start = moment(dt).startOf("year")
-                end = moment(dt).endOf("year")
+                end = moment(dt).add(1, "year").startOf("year")
                 break
             case SearchMode.QUARTER:
                 console.log("QUARTER")
                 start = moment(dt).startOf("quarter")
-                end = moment(dt).endOf("quarter")
+                end = moment(dt).add(1, "quarter").startOf("quarter")
                 break
             case SearchMode.CUSTOM_BETWEEN:
                 console.log("CUSTOM_BETWEEN")

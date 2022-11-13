@@ -4,9 +4,9 @@ header
     li
       router-link(to="/") ホーム
     li
-      router-link(to="/mission") ミッション
+      router-link(to="/mission") ミッション検索
     li
-      router-link(to="/meetup") 集会
+      router-link(to="/meetup") 集会検索
     li
       router-link(to="/about") About
     // li
