@@ -23,6 +23,7 @@ export interface MissionIF extends BaseModelIF {
 
   watch_URL: string
   watch_URL_short: string
+  watch_URL_option: string
   watch_URL_liftoff_at: number
 }
 
@@ -47,6 +48,7 @@ export class MissionBaseModel extends BaseModel implements MissionIF {
 
   watch_URL: string
   watch_URL_short: string
+  watch_URL_option: string
   watch_URL_liftoff_at: number
 
   constructor(data:MissionIF){
@@ -68,6 +70,7 @@ export class MissionBaseModel extends BaseModel implements MissionIF {
     this.image_credit = data.image_credit || ""
     this.watch_URL = data.watch_URL || ""
     this.watch_URL_short = data.watch_URL_short || ""
+    this.watch_URL_option = data.watch_URL_option || ""
     this.watch_URL_liftoff_at = data.watch_URL_liftoff_at || 0
   }
 
@@ -82,7 +85,7 @@ export class MissionBaseModel extends BaseModel implements MissionIF {
   }
 
   youtubeId(): string {
-    return this._extract_yt_id(this.watch_URL)
+    return this._extract_yt_id(this.watch_URL_option || this.watch_URL)
   }
 
   youtubeShortId(): string {
