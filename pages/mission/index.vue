@@ -2,7 +2,7 @@
 h1.pl-3.pt-3 ミッション検索
 MissionSearchForm(type="mission", :initialQuery="query")
 MissionListBlock(
-  :items="store.state.item.launch",
+  :items="store.state.item.mission",
   v-if="store.state.item.isReceived"
 )
 span(v-else) loading...
@@ -33,8 +33,8 @@ export default defineComponent({
     }
     async function getItems() {
       await store.commit("item/set_received", false);
-      await store.dispatch("item/get_items", {
-        type: "mission", params: query
+      await store.dispatch("item/get_missions", {
+        params: query
       });
       await store.commit("item/set_received", true);
     }
