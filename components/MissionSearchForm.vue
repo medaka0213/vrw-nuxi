@@ -11,20 +11,16 @@
   .my-3
     VRWSearchInputTime(v-model:queryValue="state.datetime" 
       title="時刻" :stringKey="true" :isDateTime="true"
+      :onClickSearchNext="search_next" :onClickSearchPrev="search_prev"
+      :onClickSearchCurrent="search_current"
     )
-  .my-3.row(v-if="state.datetime")
+  .my-3.row
     .col.p-1.d-grid.gap-2
-        button.btn.btn-primary(type="button" v-on:click="search_next")
-          | PREV
-    .col.p-1.d-grid.gap-2
-        button.btn.btn-primary(type="button" v-on:click="search_prev")
-          | NEXT
+      button.btn.btn-primary(type="button" v-on:click="search_items")
+        | 検索する
   .my-3.row
     label.col-sm-3.col-form-label(for="search-limit") 検索数の上限
     input.col.form-control(id="search-limit" v-model="state.limit")
-  .my-3
-    button.btn.btn-primary(type="button" v-on:click="search_items")
-      | Search
 </template>
 
 <script lang="ts">
@@ -76,10 +72,16 @@ export default defineComponent({
       state.datetime = datetime.toString()
       search_items()
     };
+    const search_current = () => {
+      let datetime = TimeRange.fromString(state.datetime).now()
+      state.datetime = datetime.toString()
+      search_items()
+    };
     return {
       search_items,
       search_next,
       search_prev,
+      search_current,
       state,
     }
   },

@@ -15,6 +15,16 @@
   )
   select.col.form-select.mr-2(v-model="state.mode" optionLabel="value" optionValue="key")
       option(v-for="option in timeRange" :value="option.key") {{option.value}}
+.my-2.row(v-if="state.enable && ['WEEK_TEIKI', 'WEEK', 'MONTH', 'YEAR', 'QUARTER', 'CUSTOM_BETWEEN'].includes(state.mode)")
+  .col.p-1.d-grid.gap-2
+    button.btn.btn-outline-primary(type="button" v-on:click="onClickSearchPrev")
+      b ◁ 前の{{state.mode==='WEEK_TEIKI' ? '週' : state.mode==='WEEK' ? '週' : state.mode==='MONTH' ? '月' : state.mode==='YEAR' ? '年' : state.mode==='QUARTER' ? '四半期' : '期間'}}
+  .col.p-1.d-grid.gap-2
+    button.btn.btn-outline-info(type="button" v-on:click="onClickSearchCurrent")
+      b 現在の{{state.mode==='WEEK_TEIKI' ? '週' : state.mode==='WEEK' ? '週' : state.mode==='MONTH' ? '月' : state.mode==='YEAR' ? '年' : state.mode==='QUARTER' ? '四半期' : '期間'}}
+  .col.p-1.d-grid.gap-2
+    button.btn.btn-outline-danger(type="button" v-on:click="onClickSearchNext")
+      b 次の{{state.mode==='WEEK_TEIKI' ? '週' : state.mode==='WEEK' ? '週' : state.mode==='MONTH' ? '月' : state.mode==='YEAR' ? '年' : state.mode==='QUARTER' ? '四半期' : '期間'}} ▷ 
 </template>
 
 <script lang="ts">
@@ -32,7 +42,10 @@ export default defineComponent({
     stringKey: {
       type: String,
       default: "datetime",
-    }
+    },
+    onClickSearchNext: Function,
+    onClickSearchPrev: Function,
+    onClickSearchCurrent: Function,
   },
   emits: ['update:queryValue'],
   setup(props, { emit }) {
@@ -77,6 +90,7 @@ export default defineComponent({
         {
           key: SearchMode.MONTH,
           value: "を含む月",
+          unit: "月"
         },
         {
           key: SearchMode.YEAR,

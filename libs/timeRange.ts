@@ -2,7 +2,6 @@ import moment from "moment-timezone"
 import 'moment/locale/ja'
 
 import { param2SearchValue, searchValue2Params } from "@/actions/vrwSearch"
-import { getTransitionRawChildren } from "nuxt/dist/app/compat/capi"
 
 export enum SearchMode {
     CUSTOM_BETWEEN = "CUSTOM_BETWEEN",
@@ -115,13 +114,19 @@ export class TimeRange implements timeRangeIF {
         switch (mode) {
             case SearchMode.WEEK_TEIKI:
                 console.log("WEEK_TEIKI")
-                start = moment(dt).startOf("week")
-                end = moment(dt).endOf("week")
+                start = moment(dt).startOf("week").add(1, "day")
+                start.set("hour", 12)
+                end = moment(dt).endOf("week").add(1, "day")
+                end.set("hour", 15)
+                if (start.isAfter(dt)){
+                    start = start.subtract(1, "week")
+                    end = end.subtract(1, "week")
+                }
                 break
             case SearchMode.WEEK:
                 console.log("WEEK")
-                start = moment(dt).startOf("week").add(1, "day")
-                end = moment(dt).endOf("week").add(1, "day")
+                start = moment(dt).startOf("week")
+                end = moment(dt).endOf("week")
                 break
             case SearchMode.MONTH:
                 console.log("MONTH")
@@ -182,7 +187,7 @@ export class TimeRange implements timeRangeIF {
     }
 
     // 次の範囲
-    prev(): TimeRange {
+    next(): TimeRange {
         switch (this.mode) {
             case SearchMode.WEEK_TEIKI:
                 return TimeRange.fromMode(moment(this.start).add(1, "weeks").toDate(), SearchMode.WEEK_TEIKI)
@@ -208,7 +213,7 @@ export class TimeRange implements timeRangeIF {
     }
 
     // 前の範囲
-    next(): TimeRange {
+    prev(): TimeRange {
         switch (this.mode) {
             case SearchMode.WEEK_TEIKI:
                 return TimeRange.fromMode(moment(this.start).add(-1, "weeks").toDate(), SearchMode.WEEK_TEIKI)
@@ -231,6 +236,10 @@ export class TimeRange implements timeRangeIF {
             default:
                 return this
         }
+    }
+
+    now(): TimeRange {
+        return TimeRange.fromMode(new Date, this.mode, new Date)
     }
 }
 

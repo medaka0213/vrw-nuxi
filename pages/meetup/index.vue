@@ -15,7 +15,7 @@ import { useRoute, useRouter } from "vue-router";
 import MeetupListBlock from "@/components/MeetupListBlock";
 import MeetupSearchForm from "@/components/MeetupSearchForm";
 import store from "@/store";
-import { time_between}  from "@/actions/time";
+import { SearchMode, TimeRange } from "@/libs/timeRange";
 
 export default defineComponent({
   components: {
@@ -28,7 +28,7 @@ export default defineComponent({
     if (!Object.keys(query).length) {
       query = {
         limit: 100,
-        datetime: time_between("upcoming", 3).join("..."),
+        datetime: TimeRange.fromMode(new Date(), SearchMode.WEEK_TEIKI).toString(),
       }
     }
     async function getItems() {
