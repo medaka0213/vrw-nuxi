@@ -44,10 +44,10 @@ export const searchValue2Params = (mode: string, value0: any, value1: any, strin
 
 export const param2SearchValue = (param: string, stringKey: string): any => {
     let res: any = {}
-    if (!param || param === "") {
+    if (!param) {
         res = {
             enable: false,
-            mode: "EQ",
+            mode: "BEGINS",
             value0: "",
         }
     }
@@ -136,6 +136,9 @@ export const param2SearchValue = (param: string, stringKey: string): any => {
 }
 
 export const modeDict = [{
+    key: "BEGINS",
+    value: "先頭一致"
+}, {
     key: "EQ",
     value: "完全一致"
 }, {
@@ -150,9 +153,6 @@ export const modeDict = [{
 }, {
     key: "GT_E",
     value: "以上"
-}, {
-    key: "BEGINS",
-    value: "先頭一致"
 }, {
     key: "N_EQ",
     value: "等しくない"

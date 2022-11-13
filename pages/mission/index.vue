@@ -12,10 +12,11 @@ span(v-else) loading...
 import { defineComponent, reactive, computed, onMounted } from "vue";
 import { useRoute, useRouter } from "vue-router";
 
-import MissionListBlock from "@/components/MissionListBlock";
-import MissionSearchForm from "@/components/MissionSearchForm";
+import MissionListBlock from "@/components/MissionListBlock.vue";
+import MissionSearchForm from "@/components/MissionSearchForm.vue";
 import store from "@/store";
-import { time_between}  from "@/actions/time";
+
+import { SearchMode, TimeRange } from "@/libs/timeRange";
 
 export default defineComponent({
   components: {
@@ -28,7 +29,7 @@ export default defineComponent({
     if (!Object.keys(query).length) {
       query = {
         limit: "100",
-        datetime: time_between("upcoming", 12).join("..."),
+        datetime: TimeRange.fromMode(new Date(), SearchMode.WEEK_TEIKI).toString(),
       }
     }
     async function getItems() {
