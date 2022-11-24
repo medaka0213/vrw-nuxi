@@ -7,10 +7,6 @@ phases:
   build:
     commands:
       - yarn generate
-  post_build:
-    commands:
-      - aws cloudfront create-invalidation --distribution-id E19NR6ENBBQKIZ --paths "/*"
-      - aws cloudfront create-invalidation --distribution-id ERLJRXLWGRV5E --paths "/*"
 artifacts:
   files:
     - '**/*'
