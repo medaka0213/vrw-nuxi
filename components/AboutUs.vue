@@ -8,9 +8,9 @@
     
     p 最新の打ち上げ情報については、下記のリンクをご覧ください。
     span.me-3  
-        a(href="/meetup") 集会一覧
+        a(href="/mission") ミッション検索
     span.me-3  
-        a(href="/misson") ミッション一覧
+        a(href="/meetup") 集会検索
 
 .bg-white.my-3.p-3
     h3 外部リンク
