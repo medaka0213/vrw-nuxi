@@ -22,9 +22,9 @@
                 LaunchListItem(:item="item" v-if="item.itemType() == 'launch'")
 
             .p-3.mb-3.border.bg-light(v-if="store.state.item['meetup']" || [] !== [])
-                p.mb-0
-                    a(:href="store.state.item['meetup'][0].itemDetailPath()")
-                        | 集会情報
+                p.mb-0(v-for="meetup in store.state.item['meetup'] || []")
+                    a(:href="meetup.itemDetailPath()")
+                        | 集会 [{{meetup.type.toUpperCase()}}] - {{meetup.datetime_format()}}
 
     .mb-3.border-top-2.border-400.py-5.text-left.col-12(v-if="store.state.item['slide']" || [] !== [])
         h4 スライド資料

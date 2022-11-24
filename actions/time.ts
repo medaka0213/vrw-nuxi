@@ -45,8 +45,30 @@ export function time_between(mode:string="upcoming", months:number=3): string[]{
 }
 }
 
+function get_day_jp(dt:Date):string{
+    let day = moment(dt).format('e');
+    if (day == "0"){
+        day = "日";
+    }else if (day == "1"){
+        day = "月";
+    }else if (day == "2"){
+        day = "火";
+    }else if (day == "3"){
+        day = "水";
+    }else if (day == "4"){
+        day = "木";
+    }else if (day == "5"){
+        day = "金";
+    }else if (day == "6"){
+        day = "土";
+    }
+    return day;
+}
+
 export function format_datetime_JP(datetime:string): string{
-    return moment(datetime+"Z").tz('Asia/Tokyo').format("M/D(ddd) HH:mm");
+    const dt = moment(datetime+"Z").tz('Asia/Tokyo').locale('ja');
+    let res = dt.format(`M/D(${get_day_jp(new Date(datetime))}) HH:mm`);
+    return res;
 }
 
 export function format_countdown(datetime:string): string{
