@@ -10,14 +10,18 @@
         | 💬 {{ item.get_jp_value('overview') }}
     p.py-0.my-1.text-sm
         | 🔗 
-        a(v-bind:href="item.nextSpaceFlightLink()" target="_blank")
+        ExternalLink(v-bind:href="item.nextSpaceFlightLink()")
             | NextSpaceFlight.com
 </template>
 
 <script lang="ts">
 import { defineComponent, reactive, computed, onMounted } from 'vue'
+import ExternalLink from "@/components/common/ExternalLink.vue";
 
 export default defineComponent({
-    props: ["item"]
+    props: ["item"],
+    components: {
+        ExternalLink
+    },
 })
 </script>

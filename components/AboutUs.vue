@@ -19,15 +19,15 @@
         |告知・スケジュール・打ち上げ情報の確認等にご利用ください
     
     span.me-3
-        a(href="https://twitter.com/vr_launch" target="_blank")
+        ExternalLink(href="https://twitter.com/vr_launch")
             |Twitter
     
     span.me-3
-        a(href="https://t.co/cjfnxjZrZG" target="_blank")
+        ExternalLink(href="https://t.co/cjfnxjZrZG")
             |Discord
 
     span.me-3
-        a(href="https://t.co/nL12021X0s" target="_blank")
+        ExternalLink(href="https://t.co/nL12021X0s")
             |Google Calendar
 
 .bg-white.my-3.p-3
@@ -36,10 +36,27 @@
         | ご意見・ご要望等ございましたら、下記のGoogle Form までお問い合わせください。
 
     span.me-3
-        a(href="https://docs.google.com/forms/d/e/1FAIpQLScESvA557taE0zYj8gzlx2cQwrUDWs3cPxDnCWlacfUWTVLwg/viewform" target="_blank") 
+        ExternalLink(href="https://docs.google.com/forms/d/e/1FAIpQLScESvA557taE0zYj8gzlx2cQwrUDWs3cPxDnCWlacfUWTVLwg/viewform") 
             |「ロケみる集会」参加者アンケート
     
     span.me-3
-        a(href="https://docs.google.com/forms/d/e/1FAIpQLSeA5e7jdzyvLZD9-fs01ixzUJjJhcZKN65pjGSYj46nYYDEPw/viewform" target="_blank")
+        ExternalLink(href="https://docs.google.com/forms/d/e/1FAIpQLSeA5e7jdzyvLZD9-fs01ixzUJjJhcZKN65pjGSYj46nYYDEPw/viewform")
             |「ロケみる集会」スタッフ参加希望フォーム
 </template>
+
+<script lang="ts">
+import ExternalLink from "@/components/common/ExternalLink.vue";
+
+export default {
+    props: ["href"],
+    components: {
+        ExternalLink
+    },
+    setup(props){
+        return {
+            props
+        }
+    }
+};
+</script>
+

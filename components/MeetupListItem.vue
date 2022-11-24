@@ -10,14 +10,18 @@
         | 👨‍🚀 VRChat: {{ item.user }} にJOIN
     p.py-0.my-1.text-sm(v-if="item.get_jp_value('tweet')")
         | 🔗 
-        a(v-bind:href="item.twitterLinkJP()" target="_blank")
+        ExternalLink(v-bind:href="item.twitterLinkJP()")
             | Twitter
 </template>
 
 <script>
 import { defineComponent, reactive, computed, onMounted } from 'vue'
+import ExternalLink from "@/components/common/ExternalLink.vue";
 
 export default defineComponent({
-    props: ["item"]
+    props: ["item"],
+    components: {
+        ExternalLink
+    },
 })
 </script>
