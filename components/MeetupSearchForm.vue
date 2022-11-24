@@ -1,6 +1,5 @@
 <template lang="pug">
 .p-4.my-3.bg-white.text-left
-  h4 検索フォーム
   p 注意: 日本語未対応です。英名・国際標準時で検索してください。
   .my-3
     VRWSearchInput(v-model:queryValue="state.type" title="集会タイプ (live / archive)" :stringKey="true")
