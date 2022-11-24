@@ -104,10 +104,10 @@ export default defineComponent({
         const links = computed(() => {
             if (store.state.item.isReceived) {
                 return {
-                    rocket : `/mission?rocket=${item.value.rocket}&limit=1000`,
-                    site : `/mission?site=${item.value.site}&limit=1000`,
-                    provider : `/mission?provider=${item.value.provider}&limit=1000`,
-                    datetime: `/mission?datetime=${TimeRange.fromMode(new Date(item.value.datetime), SearchMode.YEAR).toString()}&limit=1000`,
+                    rocket : `/mission/?rocket=${item.value.rocket}&limit=1000`,
+                    site : `/mission/?site=${item.value.site}&limit=1000`,
+                    provider : `/mission/?provider=${item.value.provider}&limit=1000`,
+                    datetime: `/mission/?datetime=${TimeRange.fromMode(new Date(item.value.datetime), SearchMode.YEAR).toString()}&limit=1000`,
                 };
             } else {
                 return {};
