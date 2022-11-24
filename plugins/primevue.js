@@ -15,6 +15,10 @@ import ColumnGroup from 'primevue/columngroup';     //optional for column groupi
 import Row from 'primevue/row';                     //optional for row
 import Galleria from 'primevue/galleria';
 import Card from 'primevue/card';
+import Sidebar from 'primevue/sidebar';
+import Menu from 'primevue/menu';
+import Toast from 'primevue/toast';
+import ToastService from 'primevue/toastservice';
 
 export default defineNuxtPlugin((nuxtApp) => {
     nuxtApp.vueApp.use(PrimeVue, {ripple: true});
@@ -32,4 +36,8 @@ export default defineNuxtPlugin((nuxtApp) => {
     nuxtApp.vueApp.component('Row', Row);
     nuxtApp.vueApp.component('Galleria', Galleria);
     nuxtApp.vueApp.component('Card', Card);
+    nuxtApp.vueApp.component('Sidebar', Sidebar);
+    nuxtApp.vueApp.component('Menu', Menu);
+    nuxtApp.vueApp.component('Toast', Toast);
+    nuxtApp.vueApp.use(ToastService);
 });
