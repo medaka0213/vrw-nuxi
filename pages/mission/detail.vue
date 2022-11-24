@@ -26,6 +26,20 @@
                     a(:href="meetup.itemDetailPath()")
                         | 集会 [{{meetup.type.toUpperCase()}}] - {{meetup.datetime_format()}}
 
+            .p-3.mb-3.border.bg-light
+                p.mb-0(v-if="item.itemType() == 'launch'")
+                    a(:href="links.rocket").mr-1
+                        | {{item.get_jp_value("rocket")}} ロケット
+                    | のミッション一覧
+                p.mb-0(v-if="item.itemType() == 'launch'")
+                    a(:href="links.site").mr-1
+                        | {{item.get_jp_value("site")}} 
+                    | のミッション一覧
+                p.mb-0
+                    a(:href="links.datetime").mr-1
+                        | {{item.datetime.split("-")[0]}}年
+                    | のミッション一覧
+
     .mb-3.border-top-2.border-400.py-5.text-left.col-12(v-if="store.state.item['slide']" || [] !== [])
         h4 スライド資料
         SlideItemBlock(:item="store.state.item['slide'][0]" style="max-width: 800px")
@@ -60,6 +74,7 @@ import YouTubeBlock from "@/components/common/Youtube";
 import CountDownClock from "@/components/common/CountDownClock";
 
 import store from "@/store";
+import { SearchMode, TimeRange } from "@/libs/timeRange";
 
 // ミッション詳細ページ ... launch と event で共通だが、若干の条件分岐あり
 export default defineComponent({
@@ -86,6 +101,18 @@ export default defineComponent({
                 return {};
             }
         });
+        const links = computed(() => {
+            if (store.state.item.isReceived) {
+                return {
+                    rocket : `/mission?rocket=${item.value.rocket}&limit=1000`,
+                    site : `/mission?site=${item.value.site}&limit=1000`,
+                    provider : `/mission?provider=${item.value.provider}&limit=1000`,
+                    datetime: `/mission?datetime=${TimeRange.fromMode(new Date(item.value.datetime), SearchMode.YEAR).toString()}&limit=1000`,
+                };
+            } else {
+                return {};
+            }
+        });
         const state = reactive({
             item: {},
             relations: {},
@@ -101,12 +128,12 @@ export default defineComponent({
         }
         onMounted(() => {
             getItems();
-            console.log(store.state);
         });
         return {
             item,
             store,
             state,
+            links,
             getItems,
         };
     },
