@@ -60,6 +60,7 @@ header
         span.mr-3
             a(target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSeA5e7jdzyvLZD9-fs01ixzUJjJhcZKN65pjGSYj46nYYDEPw/viewform")
                 | スタッフ参加希望フォーム
+        span デバッグ用 {{ $ua.browser }}
     p ©2022 VirtualRocketWatching
 </template>
 
