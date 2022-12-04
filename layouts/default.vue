@@ -46,21 +46,20 @@ header
                 | 集会検索
     p
         span.mr-3
-            a(target="_blank" href="https://t.co/nL12021X0s")
+            a(target="_blank" href="https://t.co/nL12021X0s").text-sm
                 | Twitter
         span.mr-3
-            a(target="_blank" href="https://t.co/nL12021X0s")
-                | Calendar
+            a(target="_blank" href="https://t.co/nL12021X0s").text-sm
+                | カレンダー
         span.mr-3
-            a(target="_blank" href="https://t.co/nL12021X0s")
+            a(target="_blank" href="https://t.co/nL12021X0s").text-sm
                 | Discord
         span.mr-3
-            a(target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLScESvA557taE0zYj8gzlx2cQwrUDWs3cPxDnCWlacfUWTVLwg/viewform")
+            a(target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLScESvA557taE0zYj8gzlx2cQwrUDWs3cPxDnCWlacfUWTVLwg/viewform").text-sm
                 | 参加者アンケート
         span.mr-3
-            a(target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSeA5e7jdzyvLZD9-fs01ixzUJjJhcZKN65pjGSYj46nYYDEPw/viewform")
+            a(target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSeA5e7jdzyvLZD9-fs01ixzUJjJhcZKN65pjGSYj46nYYDEPw/viewform").text-sm
                 | スタッフ参加希望フォーム
-        span デバッグ用 {{ $ua.browser() }}
     p ©2022 VirtualRocketWatching
 </template>
 
