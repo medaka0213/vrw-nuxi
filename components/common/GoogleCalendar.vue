@@ -5,16 +5,6 @@
 </template>
 
 <style>
-@media screen and (max-width: 1080px) {
-  .googleCalendar {
-    min-height: 100vh;
-  }
-}
-@media screen and (min-width: 1080px) {
-  .googleCalendar {
-    min-height: 600px;
-  }
-}
 .googleCalendar iframe {
   width: 100%;
   min-height: 100%;
