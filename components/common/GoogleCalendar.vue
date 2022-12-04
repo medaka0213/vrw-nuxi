@@ -17,6 +17,6 @@
 }
 .googleCalendar iframe {
   width: 100%;
-  height: 500px;
+  min-height: 100%;
 }
 </style>
