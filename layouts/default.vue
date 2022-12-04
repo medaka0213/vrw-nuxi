@@ -9,18 +9,51 @@ header
         .col-xl-3
             .bg-white.p-4.my-3.sidebar_fixed
                 GoogleCalendar
+.bg-white.text-center.p-3.footer
+    p
+        span.mr-3
+            a(href="/").text-sm
+                | ホーム
+        span.mr-3
+            a(href="/about").text-sm
+                | このサイトについて
+        span.mr-3
+            a(href="/mission").text-sm
+                | ミッション検索
+        span.mr-3
+            a(href="/meetup").text-sm
+                | 集会検索
+    p
+        span.mr-3
+            a(target="_blank" href="https://t.co/nL12021X0s")
+                | Twitter
+        span.mr-3
+            a(target="_blank" href="https://t.co/nL12021X0s")
+                | Calendar
+        span.mr-3
+            a(target="_blank" href="https://t.co/nL12021X0s")
+                | Discord
+        span.mr-3
+            a(target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLScESvA557taE0zYj8gzlx2cQwrUDWs3cPxDnCWlacfUWTVLwg/viewform")
+                | 参加者アンケート
+        span.mr-3
+            a(target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSeA5e7jdzyvLZD9-fs01ixzUJjJhcZKN65pjGSYj46nYYDEPw/viewform")
+                | スタッフ参加希望フォーム
+    p ©2022 VirtualRocketWatching
 </template>
 
 <script lang="ts">
 import GoogleCalendar from "@/components/common/GoogleCalendar";
 import NavSideBar from "@/components/NavSideBar";
 import NavBar from "@/components/NavBar";
+import ExternalLink from "@/components/common/ExternalLink.vue";
 
 export default {
     components: {
         GoogleCalendar,
         NavSideBar,
-        NavBar
+        NavBar,
+        ExternalLink
     }
 };
 </script>
@@ -35,6 +68,7 @@ export default {
 .page-content {
     text-align: left;
     max-width: 1500px;
+    min-height: 100vh;
 }
 .sidebar_fixed {
     position: sticky;
@@ -53,5 +87,8 @@ header {
 .v-enter,
 .v-leave-to {
     opacity: 0;
+}
+.footer a {
+    color: #8a8a8a;
 }
 </style>

@@ -13,5 +13,8 @@
   .googleCalendar iframe {
 	height: 600px;
   }
+  .googleCalendar {
+    min-height: 700px;
+  }
 }
 </style>
