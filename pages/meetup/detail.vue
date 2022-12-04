@@ -18,9 +18,7 @@ DafaultLayout
                 p.mb-0
                     a(:href= "msision.itemDetailPath()" )
                         | ミッション詳細
-
-    span(v-else) 
-        | loading...
+    ProgressBar(mode="indeterminate" v-else style="height: .2em")
 </template>
 
 <script>

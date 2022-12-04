@@ -58,7 +58,7 @@
     .col-12.col-lg-6.mb-3.border-top-2.border-400.py-5.text-left(v-if="store.state.item['countdown']" || [] !== [])
         h4 飛行中タイムライン
         CountdownBlock(:item="store.state.item['countdown'][0]", mode="t-plus")
-span(v-else) loading...
+ProgressBar(mode="indeterminate" v-else style="height: .2em")
 </template>
 
 <script>

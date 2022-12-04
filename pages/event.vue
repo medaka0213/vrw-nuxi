@@ -5,7 +5,7 @@ MissionListBlock(
   :items="store.state.item.launch",
   v-if="store.state.item.isReceived"
 )
-span(v-else) loading...
+ProgressBar(mode="indeterminate" v-else style="height: .2em")
 </template>
 
 <script lang="ts">

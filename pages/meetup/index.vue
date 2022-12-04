@@ -5,7 +5,7 @@ MeetupListBlock(
   :items="store.state.item.meetup || []",
   v-if="store.state.item.isReceived"
 )
-span(v-else) loading...
+ProgressBar(mode="indeterminate" v-else style="height: .2em")
 </template>
 
 <script>

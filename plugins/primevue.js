@@ -19,6 +19,7 @@ import Sidebar from 'primevue/sidebar';
 import Menu from 'primevue/menu';
 import Toast from 'primevue/toast';
 import ToastService from 'primevue/toastservice';
+import ProgressBar from 'primevue/progressbar';
 
 export default defineNuxtPlugin((nuxtApp) => {
     nuxtApp.vueApp.use(PrimeVue, {ripple: true});
@@ -39,5 +40,6 @@ export default defineNuxtPlugin((nuxtApp) => {
     nuxtApp.vueApp.component('Sidebar', Sidebar);
     nuxtApp.vueApp.component('Menu', Menu);
     nuxtApp.vueApp.component('Toast', Toast);
+    nuxtApp.vueApp.component('ProgressBar', ProgressBar);
     nuxtApp.vueApp.use(ToastService);
 });
