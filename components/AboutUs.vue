@@ -45,12 +45,12 @@
     span.me-3
         ExternalLink(href="https://docs.google.com/forms/d/e/1FAIpQLScESvA557taE0zYj8gzlx2cQwrUDWs3cPxDnCWlacfUWTVLwg/viewform") 
             i.pi.pi-envelope.mr-1
-            |「ロケみる集会」参加者アンケート
+            | 参加者アンケート
     
     span.me-3
         ExternalLink(href="https://docs.google.com/forms/d/e/1FAIpQLSeA5e7jdzyvLZD9-fs01ixzUJjJhcZKN65pjGSYj46nYYDEPw/viewform")
             i.pi.pi-envelope.mr-1
-            |「ロケみる集会」スタッフ参加希望フォーム
+            | スタッフ参加希望フォーム
 </template>
 
 <script lang="ts">
