@@ -28,7 +28,7 @@ header
                     ).border
                     | ミッションタイムライン
                     .text-xs 画像をクリックして拡大
-                .text-center.p-3.mb-3.bg-white(v-if="$ua.browser !== 'Safari'")
+                .text-center.p-3.mb-3.bg-white(v-if="$ua.browser() !== 'Safari'")
                     GoogleCalendar
 .bg-white.text-center.p-3.footer
     p
@@ -60,7 +60,7 @@ header
         span.mr-3
             a(target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSeA5e7jdzyvLZD9-fs01ixzUJjJhcZKN65pjGSYj46nYYDEPw/viewform")
                 | スタッフ参加希望フォーム
-        span デバッグ用 {{ $ua.browser }}
+        span デバッグ用 {{ $ua.browser() }}
     p ©2022 VirtualRocketWatching
 </template>
 
