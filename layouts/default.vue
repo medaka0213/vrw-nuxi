@@ -7,8 +7,29 @@ header
         .text-left.col-xl-9.col-sm-12
             slot
         .col-xl-3
-            .bg-white.p-4.my-3.sidebar_fixed
-                GoogleCalendar
+            .my-3.sidebar_fixed
+                .text-center.p-3.mb-3.bg-white
+                    Image(
+                        src="https://img.virtualrocketwatching.net/images/events/00000.jpg"
+                        width="100%"
+                        height="auto"
+                        alt="Calendar"
+                        preview
+                    ).border
+                    | イベントカレンダー
+                    .text-xs 画像をクリックして拡大
+                .text-center.p-3.mb-3.bg-white
+                    Image(
+                        src="https://img.virtualrocketwatching.net/images/countdown/000.jpg"
+                        width="100%"
+                        height="auto"
+                        alt="Calendar"
+                        preview
+                    ).border
+                    | ミッションタイムライン
+                    .text-xs 画像をクリックして拡大
+                .text-center.p-3.mb-3.bg-white(v-if="$ua.browser !== 'Safari'")
+                    GoogleCalendar
 .bg-white.text-center.p-3.footer
     p
         span.mr-3

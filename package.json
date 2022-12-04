@@ -12,6 +12,7 @@
     "bootstrap": "^5.2.2",
     "moment": "^2.29.4",
     "moment-timezone": "^0.5.38",
+    "nuxt-user-agent": "^1.2.2",
     "primeflex": "^3.2.1",
     "primeicons": "^6.0.1",
     "primevue": "^3.18.1",

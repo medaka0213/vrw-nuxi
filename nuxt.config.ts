@@ -37,4 +37,7 @@ export default defineNuxtConfig({
     build: {
 		transpile: ['primevue']
 	},
+    modules: [
+        'nuxt-user-agent',
+    ]
 })
