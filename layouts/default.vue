@@ -31,23 +31,22 @@ header
                 .text-center.p-3.mb-3.bg-white(v-if="$ua.browser() !== 'Safari'")
                     GoogleCalendar
 .bg-white.text-center.p-3.footer
-    .container
-        .row
-            .col-xl-3.col-sm-6.mb-2
+    .d-flex.flex-wrap.justify-content-around
+            .text-center
                 span.mr-3
                     a(href="/").text-sm
                         | ホーム
                 span.mr-3
                     a(href="/about").text-sm
                         | このサイトについて
-            .col-xl-3.col-sm-6.mb-2
+            .text-center
                 span.mr-3
                     a(href="/mission").text-sm
                         | ミッション検索
                 span.mr-3
                     a(href="/meetup").text-sm
                         | 集会検索
-            .col-xl-3.col-sm-6.mb-2
+            .text-center
                 span.mr-3
                     a(target="_blank" href="https://t.co/nL12021X0s").text-sm
                         | Twitter
@@ -60,7 +59,7 @@ header
                     a(target="_blank" href="https://t.co/nL12021X0s").text-sm
                         | Discord
                         i.pi.pi-external-link.ml-1(style="font-size: 0.5rem")
-            .col-xl-3.col-sm-6.mb-2
+            .text-center
                 span.mr-3
                     a(target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLScESvA557taE0zYj8gzlx2cQwrUDWs3cPxDnCWlacfUWTVLwg/viewform").text-sm
                         | 参加者アンケート
@@ -69,9 +68,8 @@ header
                     a(target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSeA5e7jdzyvLZD9-fs01ixzUJjJhcZKN65pjGSYj46nYYDEPw/viewform").text-sm
                         | スタッフ参加希望
                         i.pi.pi-external-link.ml-1(style="font-size: 0.5rem")
-        .row
-            .col-12
-                | © 2022 Virtual Rocket Watching
+    .text-center
+        | © 2022 Virtual Rocket Watching
 </template>
 
 <script lang="ts">

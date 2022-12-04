@@ -1,24 +1,23 @@
 <template lang="pug">
-DafaultLayout
-    .row.bg-white.p-4.my-3(v-if="store.state.item.isReceived")
-        .text-left(class="col-12")
-            h1.text-primary
-                | {{item.get_jp_value("title")}}
-        .text-left.col-12.col-lg-6
-            img(
-                v-bind:src="posterUrl || 'https://img.virtualrocketwatching.net/VRWlogo_21-02-14_JP.png'"
-                alt="Image" max-width="100%" preview
-            )
-            span(class="text-gray-600 text-sm" v-if="item.image_credit && !posterUrl")
-                | Credit: {{item.image_credit}}
-        .text-left.col-12.col-lg-6(v-if="item.pk")
-            .p-3.mb-3.border.bg-light
-                MeetupListItem(:item = "item")
-            .p-3.mb-3.border.bg-light
-                p.mb-0
-                    a(:href= "msision.itemDetailPath()" )
-                        | ミッション詳細
-    ProgressBar(mode="indeterminate" v-else style="height: .2em")
+.row.bg-white.p-2.my-3(v-if="store.state.item.isReceived")
+    .text-left(class="col-12")
+        h1.text-primary
+            | {{item.get_jp_value("title")}}
+    .text-left.col-12.col-lg-6
+        img(
+            v-bind:src="posterUrl || 'https://img.virtualrocketwatching.net/VRWlogo_21-02-14_JP.png'"
+            alt="Image" max-width="100%" preview
+        )
+        span(class="text-gray-600 text-sm" v-if="item.image_credit && !posterUrl")
+            | Credit: {{item.image_credit}}
+    .text-left.col-12.col-lg-6(v-if="item.pk")
+        .p-3.mb-3.border.bg-light
+            MeetupListItem(:item = "item")
+        .p-3.mb-3.border.bg-light
+            p.mb-0
+                a(:href= "msision.itemDetailPath()" )
+                    | ミッション詳細
+ProgressBar(mode="indeterminate" v-else style="height: .2em")
 </template>
 
 <script>

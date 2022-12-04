@@ -5,7 +5,7 @@ MissionListBlock(
   :items="store.state.item.mission",
   v-if="store.state.item.isReceived"
 )
-ProgressBar(mode="indeterminate" v-else style="height: .2em")
+ProgressBar(mode="indeterminate" v-else style="height: .2em").mb-5
 </template>
 
 <script lang="ts">

@@ -1,5 +1,5 @@
 <template lang="pug">
-.text-left.row.bg-white.p-4.my-3(v-if="store.state.item.isReceived")
+.text-left.row.bg-white.p-2.my-3(v-if="store.state.item.isReceived")
     .mb-3.col-12
         .h1.pl-3.text-primary
             | {{ item.title() }}
